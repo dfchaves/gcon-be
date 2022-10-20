@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="7aef05ff-0966-4fd8-a606-d1a893f72835" name="Changes" comment="" />
+=======
+    <list default="true" id="246cafc2-ec99-4d5d-ba8b-c9008e68aa7c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/functions/src/members/member-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/members/member-types.ts" afterDir="false" />
+    </list>
+>>>>>>> c5c9ceb82ce5e0a3ffa3eed7ac12aa649ba7f5db
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,6 +32,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
@@ -40,6 +47,22 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+=======
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/dev/uexternado/gcon-be",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "settings.typescriptcompiler",
+    "ts.external.directory.path": "C:\\dev\\uexternado\\gcon-be\\functions\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+>>>>>>> c5c9ceb82ce5e0a3ffa3eed7ac12aa649ba7f5db
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\dev\uexternado\gcon-be\functions\src\members" />
