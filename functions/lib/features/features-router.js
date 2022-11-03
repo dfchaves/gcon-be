@@ -10,7 +10,14 @@ exports.create = functions.https.onRequest(async (request, response) => {
 });
 exports.get = functions.https.onRequest(async (request, response) => {
     const payload = request.query.collection;
-    const data = await (0, features_handler_1.getFeaturesHandler)(payload);
+    if (payload != null) {
+        const data = await (0, features_handler_1.getFeaturesHandler)(payload.toString());
+        response.json(data);
+    }
+});
+exports.getWithFilters = functions.https.onRequest(async (request, response) => {
+    const { collection, filterParam, filterOperator, filterValue } = request.body;
+    const data = await (0, features_handler_1.getFeaturesWithFiltersHandler)(collection, filterParam, filterOperator, filterValue);
     response.json(data);
 });
 //# sourceMappingURL=features-router.js.map

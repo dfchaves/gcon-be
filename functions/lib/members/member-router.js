@@ -9,7 +9,9 @@ exports.create = functions.https.onRequest(async (request, response) => {
 });
 exports.get = functions.https.onRequest(async (request, response) => {
     const payload = request.query.collection;
-    const data = await (0, member_handler_1.getMembersHandler)(payload);
-    response.json(data);
+    if (payload != null) {
+        const data = await (0, member_handler_1.getMembersHandler)(payload.toString());
+        response.json(data);
+    }
 });
 //# sourceMappingURL=member-router.js.map

@@ -3,20 +3,20 @@ import {
   getCollectionWithFilters,
   saveCollection,
 } from "../utils/firestore";
-import {featureInfo} from "./features-types";
+import {categoriesInfo} from "./categories-types";
 import {firestore} from "firebase-admin";
 import WhereFilterOp = firestore.WhereFilterOp;
 
-export const saveFeatures =
-    async (collection: string, payload: featureInfo) => {
+export const saveCategories =
+    async (collection: string, payload: categoriesInfo) => {
       return await saveCollection(collection, payload);
     };
 
-export const getFeatures = async (collection: string) => {
+export const getCategories = async (collection: string) => {
   return await getCollection(collection);
 };
 
-export const getFeaturesWithFilters = async (
+export const getCategoriesWithFilters = async (
     collection: string,
     filterParam: string,
     filterOperator: WhereFilterOp,

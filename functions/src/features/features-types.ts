@@ -4,4 +4,6 @@ export interface featureInfo {
     description: string,
     content: string,
     image: string,
+    found: string,
+    category: string,
 }

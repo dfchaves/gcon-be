@@ -1,7 +1,9 @@
 import {getMembers, saveMembers} from "./member-services";
 import {memberInfo} from "./member-types";
 
-export const saveMembersHandler = async (collection: string, data: any) => {
+export const saveMembersHandler = async (
+    collection: string,
+    data: memberInfo) => {
   return await saveMembers(collection, {
     name: data.name,
     lastName: data.lastName,
@@ -10,7 +12,7 @@ export const saveMembersHandler = async (collection: string, data: any) => {
   });
 };
 
-export const getMembersHandler = async (collection: any):
+export const getMembersHandler = async (collection: string):
     Promise<memberInfo[]> => {
   const data = await getMembers(collection);
   const membersList: memberInfo[] = [];
