@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getCollectionWithFilters = exports.getCollection = exports.saveCollection = void 0;
+exports.getDocument = exports.getCollectionWithFilters = exports.getCollection = exports.saveCollection = void 0;
 const index_1 = require("../index");
 const saveCollection = async (collection, data) => {
     const response = await index_1.db.collection(collection).add(data);
@@ -28,4 +28,14 @@ const getCollectionWithFilters = async (collection, filterParam, filterOperator,
     return snapshotFilter;
 };
 exports.getCollectionWithFilters = getCollectionWithFilters;
+const getDocument = async (collection, documentId) => {
+    const collectionRef = index_1.db.collection(collection).doc(documentId);
+    const documentSnapshot = await collectionRef.get();
+    if (!documentSnapshot.exists) {
+        console.log("No matching documents.");
+        return;
+    }
+    return documentSnapshot;
+};
+exports.getDocument = getDocument;
 //# sourceMappingURL=firestore.js.map

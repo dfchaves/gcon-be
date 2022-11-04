@@ -1,8 +1,9 @@
 import * as functions from "firebase-functions";
 import {saveFeatures} from "./features-services";
 import {
-  getFeaturesHandler,
-  getFeaturesWithFiltersHandler} from "./features-handler";
+  getFeaturesHandler, getFeaturesUniqueHandler,
+  getFeaturesWithFiltersHandler,
+} from "./features-handler";
 
 exports.create = functions.https.onRequest(
     async (request, response) => {
@@ -36,3 +37,14 @@ exports.getWithFilters = functions.https.onRequest(
     });
 
 
+exports.getFeatureUnique = functions.https.onRequest(
+    async (request, response) => {
+      const {
+        collection,
+        documentId,
+      } = request.body;
+      const data = await getFeaturesUniqueHandler(
+          collection,
+          documentId);
+      response.json(data);
+    });

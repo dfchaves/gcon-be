@@ -1,6 +1,6 @@
 import {
   getCollection,
-  getCollectionWithFilters,
+  getCollectionWithFilters, getDocument,
   saveCollection,
 } from "../utils/firestore";
 import {featureInfo} from "./features-types";
@@ -26,4 +26,10 @@ export const getFeaturesWithFilters = async (
       filterParam,
       filterOperator,
       filterValue);
+};
+
+export const getFeatureDocument = async (
+    collection: string,
+    documentId: string) => {
+  return await getDocument(collection, documentId);
 };

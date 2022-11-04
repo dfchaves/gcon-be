@@ -20,4 +20,9 @@ exports.getWithFilters = functions.https.onRequest(async (request, response) => 
     const data = await (0, features_handler_1.getFeaturesWithFiltersHandler)(collection, filterParam, filterOperator, filterValue);
     response.json(data);
 });
+exports.getFeatureUnique = functions.https.onRequest(async (request, response) => {
+    const { collection, documentId, } = request.body;
+    const data = await (0, features_handler_1.getFeaturesUniqueHandler)(collection, documentId);
+    response.json(data);
+});
 //# sourceMappingURL=features-router.js.map

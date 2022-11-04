@@ -1,10 +1,13 @@
 import {
+  getFeatureDocument,
   getFeatures,
   getFeaturesWithFilters,
-  saveFeatures} from "./features-services";
+  saveFeatures,
+} from "./features-services";
 import {featureInfo} from "./features-types";
 import {firestore} from "firebase-admin";
 import WhereFilterOp = firestore.WhereFilterOp;
+import {error} from "firebase-functions/lib/logger";
 
 export const saveFeatureHandler = async (
     collection: string,
@@ -62,4 +65,22 @@ export const getFeaturesWithFiltersHandler = async (
     featureFilterList.push(feature);
   });
   return featureFilterList;
+};
+
+export const getFeaturesUniqueHandler = async (
+    collection: string, documentId: string):
+    Promise<featureInfo> => {
+  const data = await getFeatureDocument(collection, documentId);
+  if (data?.exists) {
+    return {
+      id: data?.id,
+      title: data?.data()?.title,
+      description: data?.data()?.description,
+      content: data?.data()?.content,
+      image: data?.data()?.image,
+      found: data?.data()?.found,
+      category: data?.data()?.category,
+    };
+  }
+  throw error("Document not found");
 };

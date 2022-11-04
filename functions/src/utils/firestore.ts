@@ -34,3 +34,13 @@ export const getCollectionWithFilters =
       }
       return snapshotFilter;
     };
+
+export const getDocument = async (collection: string, documentId: string) => {
+  const collectionRef = db.collection(collection).doc(documentId);
+  const documentSnapshot = await collectionRef.get();
+  if (!documentSnapshot.exists) {
+    console.log("No matching documents.");
+    return;
+  }
+  return documentSnapshot;
+};
