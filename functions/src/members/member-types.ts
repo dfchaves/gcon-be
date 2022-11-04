@@ -4,5 +4,6 @@ export interface memberInfo {
   lastName: string,
   profession: string,
   phoneNumber: string,
+  photo:string,
 }
 

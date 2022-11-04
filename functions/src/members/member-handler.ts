@@ -9,6 +9,7 @@ export const saveMembersHandler = async (
     lastName: data.lastName,
     phoneNumber: data.phoneNumber,
     profession: data.profession,
+    photo: data.photo,
   });
 };
 
@@ -23,6 +24,7 @@ export const getMembersHandler = async (collection: string):
       lastName: doc.data().lastName,
       phoneNumber: doc.data().phoneNumber,
       profession: doc.data().profession,
+      photo: doc.data().photo,
     };
     membersList.push(member);
   });

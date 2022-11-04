@@ -8,6 +8,7 @@ const saveMembersHandler = async (collection, data) => {
         lastName: data.lastName,
         phoneNumber: data.phoneNumber,
         profession: data.profession,
+        photo: data.photo,
     });
 };
 exports.saveMembersHandler = saveMembersHandler;
@@ -21,6 +22,7 @@ const getMembersHandler = async (collection) => {
             lastName: doc.data().lastName,
             phoneNumber: doc.data().phoneNumber,
             profession: doc.data().profession,
+            photo: doc.data().photo,
         };
         membersList.push(member);
     });
