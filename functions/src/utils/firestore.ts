@@ -14,7 +14,7 @@ export const getCollection = async (collection: string) => {
   const collectionRef = db.collection(collection);
   const snapshot = await collectionRef.get();
   if (snapshot.empty) {
-    console.log("No matching documents.");
+    console.log("No matching documents in this query");
     return;
   }
   return snapshot;
@@ -29,7 +29,7 @@ export const getCollectionWithFilters =
       const snapshotFilter = await collectionRef
           .where(filterParam, filterOperator, filterValue).get();
       if (snapshotFilter.empty) {
-        console.log("No matching documents.");
+        console.log("No matching documents in this query");
         return;
       }
       return snapshotFilter;
@@ -39,7 +39,7 @@ export const getDocument = async (collection: string, documentId: string) => {
   const collectionRef = db.collection(collection).doc(documentId);
   const documentSnapshot = await collectionRef.get();
   if (!documentSnapshot.exists) {
-    console.log("No matching documents.");
+    console.log("No matching documents in this query");
     return;
   }
   return documentSnapshot;
